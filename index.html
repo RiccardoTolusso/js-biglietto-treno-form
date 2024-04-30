@@ -4,11 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TreniRiccardo - IT</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- /css -->
 </head>
 <body>
+    <!-- 
     <input type="text" id="inputKm" placeholder="Kilometri da percorrere">
     <input type="text" id="inputAge" placeholder="Età del passeggero">
-    <button id="submitButton">Compra</button>
+    <button id="submitButton">Compra</button> 
+    -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col" id="form">
+                <h2>Calcola il prezzo del tuo biglietto</h2>
+                <div class="card">
+                    <div class="input-group">
+                        <div>
+                            <label for="inputName">Nome Cognome</label>
+                            <input type="text" id="inputName">
+                        </div>
+                        
+                        <div>
+                            <label for="inputKm">Km da percorrere</label>
+                            <input type="text" id="inputKm">
+                        </div>
+    
+                        <div>
+                            <label for="inputAge">Fascia di età
+
+                            </label>
+                            <select id="inputAge">
+                                <option value="30">Adulto</option>
+                                <option value="17">Minorenne</option>
+                                <option value="66">Over 65</option>    
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="submitButton">Genera</button>
+                        <button id="resetButton">Annulla</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="ticket">
+                <h2>Il tuo biglietto</h2>
+                <div class="ticket-card">
+                    <h3>Dettaglio Passeggeri</h3>
+                    <div>
+                        <div>
+                            <h3>Nome Passeggero</h3>
+                            <h4 id="outputName"></h4>
+                        </div>
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Offerta</th>
+                                        <th>Carrozza</th>
+                                        <th>Codice CP</th>
+                                        <th>Costo biglietto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- javascript -->
     <script src="./js/main.js"></script>

@@ -16,8 +16,11 @@ let fullTicketPrice
 
 // definisco le costanti che contengono gli elementi del DOM che utilizzerò
 const submitButton = document.getElementById("submitButton")
+const clearButton = document.getElementById("resetButton")
+const inputName = document.getElementById("inputName")
 const inputKm = document.getElementById('inputKm')
 const inputAge = document.getElementById('inputAge')
+
 console.log(inputAge)
 // creo un event listner per quando l'utente preme il pulsante submitButton
 submitButton.addEventListener('click', function(){
@@ -52,6 +55,11 @@ submitButton.addEventListener('click', function(){
     `)
 })
 
+clearButton.addEventListener('click', function(){
+    inputKm.value = ""
+    inputName.value = ""
+    inputAge.selectedIndex = 0
+})
 
 // valido i dati di input
 

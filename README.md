@@ -1,6 +1,6 @@
 --------- HTML -----------
 creo due campi di input rispettivamente
-#inputKilometers
+#inputKm
 #inputAge
 
 creo un pulsante

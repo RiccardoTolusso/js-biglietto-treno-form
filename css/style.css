@@ -76,5 +76,28 @@ h3{
 }
 /* ticket-card */
 #ticket .ticket-card{
-    
+    border-radius: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#ticket .ticket-card > div{
+    display: flex;
+}
+
+#ticket .left-col{
+    background-color: gray;
+}
+
+#ticket .right-col{
+    width: 100%;
+    padding: 0 1rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#ticket table{
+    width: 100%;
+    line-height: 3;
+    text-align: left;
 }

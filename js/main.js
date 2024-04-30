@@ -7,6 +7,8 @@ const oldAge = 65
 
 const kmPrice = 0.21
 
+const offerts = ['biglietto intero', 'biglietto young', 'biglietto senior']
+
 // definisco le variabili
 let userKm 
 let userAge
@@ -21,10 +23,19 @@ const inputName = document.getElementById("inputName")
 const inputKm = document.getElementById('inputKm')
 const inputAge = document.getElementById('inputAge')
 
+// definisco le costanti di output
+const outputName = document.getElementById("outputName")
+const outputOffer = document.getElementById("outputOffer")
+const outputCarriage = document.getElementById("outputCarriage")
+const outputCodeCP = document.getElementById("outputCodeCP")
+const outputPrice = document.getElementById("outputPrice")
+
+
 console.log(inputAge)
 // creo un event listner per quando l'utente preme il pulsante submitButton
 submitButton.addEventListener('click', function(){
     let tempUserKm = Number(inputKm.value)
+    let tempoffer = 0
     if (isNaN(tempUserKm) || tempUserKm <= 0){
         // function to give user feedbac
         return
@@ -34,17 +45,25 @@ submitButton.addEventListener('click', function(){
         // function to give user feedback
         return
     }
+    let tempuserName = inputName.value
+    if (!isNaN(parseFloat(tempuserName)) || tempUserAge.lenght === 0){
+        // function to give user feedback
+        return
+    }
     userKm = tempUserKm
     userAge = tempUserAge
 
     fullTicketPrice = userKm * kmPrice
     if (userAge < youngAge){
+        tempoffer = 1
         discountedTicketPrice = fullTicketPrice * (100 - youngDiscount) / 100
     }else if (userAge > oldAge){
+        tempoffer = 2
         discountedTicketPrice = fullTicketPrice * (100 - oldDiscount) / 100
     } else {
         discountedTicketPrice = fullTicketPrice
     }
+
     console.log(
     `
     === MILESTONE 1 ===
@@ -53,6 +72,12 @@ submitButton.addEventListener('click', function(){
     Costo del biglietto intero: ${fullTicketPrice}
     Costo del biglietto scontato: ${discountedTicketPrice}
     `)
+    
+    outputName.innerText = tempuserName
+    outputOffer.innerText = offerts[tempoffer]
+    outputCarriage.innerText = (Math.random()*10).toFixed(0)
+    outputCodeCP.innerText = outputCarriage.innerText + (Math.random()*10000).toFixed(0)
+    outputPrice.innerText = discountedTicketPrice.toFixed(2) + " €"
 })
 
 clearButton.addEventListener('click', function(){
